@@ -3,7 +3,6 @@
   ansible.builtin.apt:
     pkg:
     - global
-    - ctags
-    - python-pygments
+    - exuberant-ctags
     - python3-pygments
   become: true
