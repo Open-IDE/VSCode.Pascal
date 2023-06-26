@@ -1,0 +1,9 @@
+---
+- name: Install 
+  ansible.builtin.apt:
+    pkg:
+    - global
+    - ctags
+    - python-pygments
+    - python3-pygments
+  become: true

@@ -1,0 +1,11 @@
+# Installing and Configuring GNU Global
+# https://marketplace.visualstudio.com/items?itemName=alefragnani.pascal
+
+- hosts: localhost
+  vars:
+    # Host_vars
+    ansible_become_password: u
+    ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
+
+  roles:
+  - VSCode Pascal
