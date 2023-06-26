@@ -6,3 +6,5 @@
     - exuberant-ctags
     - python3-pygments
   become: true
+
+# repo: https://launchpad.net/ubuntu/+source/exuberant-ctags
