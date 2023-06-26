@@ -3,3 +3,9 @@
 # - https://ctags.sourceforge.net/
 
 - include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution }}/main.yml'
+
+
+- name: VSCode Pascal extension
+  ansible.builtin.shell: code --install-extension alefragnani.pascal
+  args:
+    creates: "{{ lookup('ansible.builtin.env', 'HOME') }}/.vscode/extensions/alefragnani.pascal-*"
