@@ -1,15 +1,20 @@
+// adapted from: https://github.com/alefragnani/vscode-language-pascal#freepascal
+// using my Custom "presentation" options
 {
    "version": "2.0.0",
    "tasks": [
       {
-         "label": "make bin",
+         "label": "pre",
          "type": "shell",
          "windows": {
             "command": "mkdir -p bin"
          },
          "linux": {
             "command": "mkdir -p bin"
-         }
+         },
+         "presentation": {
+            "close": true
+         },
       },
       {
          "label": "Pascal",
@@ -19,10 +24,6 @@
          },
          "linux": {
             "command": "/usr/bin/fpc"
-         },
-         "presentation": {
-            "reveal": "always",
-            "panel": "new"
          },
          "args": [
             {
@@ -44,18 +45,39 @@
                "message": 6
             }
          },
-         // "group": {
-         //    "kind": "build",
-         //    "isDefault": true
-         // }
+         "presentation": {
+            // "reveal": "never",
+            "revealProblems": "onProblem",
+            "panel": "shared",
+            "clear": true
+         },
       },
       {
-         "label": "Build Pascal",
-         "dependsOn": ["make bin", "Pascal"],
+         "label": "Test",
+         "type": "shell",
+         "windows": {
+            "command": "mkdir -p bin"
+         },
+         "linux": {
+            "command": "./bin/main"
+         },
+         "presentation": {
+            "reveal": "always",
+            "panel": "shared",
+            "clear": true
+         },
+      },
+      {
+         "label": "Build & Run",
+         "dependsOn": ["pre", "Pascal", "Test"],
          "group": {
             "kind": "build",
             "isDefault": true
-         }
+         },
+         "presentation": {
+            "reveal": "always",
+            "panel": "shared"
+         },
       }
    ]
 }
