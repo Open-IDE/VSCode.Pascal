@@ -5,7 +5,10 @@
 - include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution }}/main.yml'
 
 
-- name: VSCode Pascal extension
-  ansible.builtin.shell: code --install-extension alefragnani.pascal
+- name: VSCode Pascal extensions
+  ansible.builtin.shell: "code --install-extension {{item}}"
   args:
-    creates: "{{ lookup('ansible.builtin.env', 'HOME') }}/.vscode/extensions/alefragnani.pascal-*"
+    creates: "{{ lookup('ansible.builtin.env', 'HOME') }}/.vscode/extensions/{{item}}-*"
+  loop:
+  - alefragnani.pascal
+  - alefragnani.pascal-formatter
