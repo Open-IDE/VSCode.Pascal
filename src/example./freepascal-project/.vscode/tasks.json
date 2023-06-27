@@ -16,6 +16,10 @@
           },
           "args": [
              {
+                "value": "-FE./bin",
+                "quoting": "escape"
+             },
+             {
                 "value": "main.pas",
                 "quoting": "escape"
              }
