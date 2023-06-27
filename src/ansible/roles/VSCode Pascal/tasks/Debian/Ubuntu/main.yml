@@ -8,3 +8,7 @@
   become: true
 
 # repo: https://launchpad.net/ubuntu/+source/exuberant-ctags
+
+# Home:
+# - https://www.gnu.org/software/global/download.html
+# - https://ctags.sourceforge.net/

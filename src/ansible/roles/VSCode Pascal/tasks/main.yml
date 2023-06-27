@@ -1,7 +1,4 @@
 ---
-# - https://www.gnu.org/software/global/download.html
-# - https://ctags.sourceforge.net/
-
 - include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution }}/main.yml'
 
 
@@ -12,3 +9,4 @@
   loop:
   - alefragnani.pascal
   - alefragnani.pascal-formatter
+  - CNOC.fpdebug
